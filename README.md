@@ -20,7 +20,7 @@ Dans un deuxième temps, j'aborderai certains des cas qui ont inspiré la créat
 ### A Backgrounder on Background Tasks
 ###### London Audio Developers Meetup - April 2018 - [Content](https://github.com/drowaudio/presentations/tree/master/Audio%20Developer%20Meetup%20April%202018) - [Video](https://skillsmatter.com/skillscasts/11632-audio-developers-meet-up-april)
 
-Les applications doivent être réactives, ce qui signifie qu'elles ne doivent pas passer beaucoup de temps sur le fil de discussion principal et qu'elles doivent le faire en arrière-plan. Mais quelle est la meilleure façon de procéder ? Comment communiquer en toute sécurité avec le fil de message lorsque vous avez terminé ? Comment informer les utilisateurs de l'état de ces tâches ?
+Les applications doivent être réactives, ce qui signifie qu'elles ne doivent pas passer beaucoup de temps sur le thread de message principal et qu'elles doivent le faire en arrière-plan. Mais quelle est la meilleure façon de procéder ? Comment communiquer en toute sécurité avec le thread de message lorsque vous avez terminé ? Comment informer les utilisateurs de l'état de ces tâches ?
 
 Il y a beaucoup de problèmes délicats à résoudre lorsqu'il s'agit de tâches de fond. Cet exposé se penche sur eux, construisant un système d'exécution de tâches à partir de principes de base et résolvant les pièges communs un par un. Une fois cela fait, nous verrons comment construire ce système dans une application du monde réel en utilisant des motifs composables et réutilisables.
 
