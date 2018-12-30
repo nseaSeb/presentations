@@ -1,6 +1,6 @@
-# Presentations
+# Presentations (Fork FR)
 
-This repository holds materials for the various talks and presentations I've given. Links to video recordings where available can be found below.
+Ce dépôt contient des documents pour les divers exposés et présentations que j'ai donnés. Vous trouverez ci-dessous des liens vers des enregistrements vidéo, le cas échéant.
 
 ###### Index:
   - [pluginval - Yeah, but Why Validate Plugins](#pluginval---yeah-but-why-validate-plugins)
@@ -12,54 +12,54 @@ This repository holds materials for the various talks and presentations I've giv
 ### pluginval - Yeah, but Why Validate Plugins
 ###### ADC 2018 - [Content](https://github.com/drowaudio/presentations/tree/master/ADC%202018%20-%20pluginval,%20Yeah,%20but%20Why%20Validate%20Plugins) - [Video](https://www.youtube.com/watch?v=Q97LBXqgMus)
 
-Earlier in the year we released an open source tool “pluginval” for validating audio plugins. The aim of this is to make it easier to automate the testing and validation process of developing plugins in order to catch more bugs, and sooner in the development process. Additionally, this can be used by host developers, and even end users, to check for plugin compatibility with JUCE based hosts. To start I’ll give an overview of pluginval, the architecture, deployment considerations and how everyone can make use of it.
+Plus tôt dans l'année, nous avons publié un outil open source "pluginval" pour la validation des plugins audio. L'objectif est de faciliter l'automatisation du processus de test et de validation du développement des plugins afin d'attraper plus de bugs, et plus rapidement dans le processus de développement. De plus, cela peut être utilisé par les développeurs d'hôtes, et même par les utilisateurs finaux, pour vérifier la compatibilité des plugins avec les hôtes basés sur JUCE. Pour commencer, je vais donner un aperçu du pluginval, de l'architecture, des considérations de déploiement et comment tout le monde peut s'en servir.
 
-Secondly I’ll discuss some of the cases that inspired pluginval’s creation in the first place. Developing plugins to an API may seem simple but there’s a lot of “grey” in that area. I’ll dig through some of it giving examples of what crazy behaviour both hosts and plugins alike can do and the tests employed by pluginval to ensure you’re not caught out.
+Dans un deuxième temps, j'aborderai certains des cas qui ont inspiré la création de pluginval en premier lieu. Développer des plugins pour une API peut sembler simple mais il y a beaucoup de " gris " dans ce domaine. Je vais creuser un peu en donnant des exemples de ce que les hôtes et les plugins peuvent faire et les tests utilisés par pluginval pour s'assurer que vous n'êtes pas pris au dépourvu.
 
 
 ### A Backgrounder on Background Tasks
 ###### London Audio Developers Meetup - April 2018 - [Content](https://github.com/drowaudio/presentations/tree/master/Audio%20Developer%20Meetup%20April%202018) - [Video](https://skillsmatter.com/skillscasts/11632-audio-developers-meet-up-april)
 
-Apps need to be responsive, this means taking time consuming work off off the main thread and doing it in the background. But what’s the best way to go about this? How do you communicate safely back to the message thread when you’re done? How do you inform users of the state of these tasks?
+Les applications doivent être réactives, ce qui signifie qu'elles ne doivent pas passer beaucoup de temps sur le fil de discussion principal et qu'elles doivent le faire en arrière-plan. Mais quelle est la meilleure façon de procéder ? Comment communiquer en toute sécurité avec le fil de message lorsque vous avez terminé ? Comment informer les utilisateurs de l'état de ces tâches ?
 
-There are a lot of tricky problems to solve when dealing with background tasks. This talk delves in to them, building a task running system from first principles and solving common pitfalls one by one. Once that’s done we’ll look at how to build this system in to a real world app using patterns that are compose-able and reusable.
+Il y a beaucoup de problèmes délicats à résoudre lorsqu'il s'agit de tâches de fond. Cet exposé se penche sur eux, construisant un système d'exécution de tâches à partir de principes de base et résolvant les pièges communs un par un. Une fois cela fait, nous verrons comment construire ce système dans une application du monde réel en utilisant des motifs composables et réutilisables.
 
-Using strict types and free functions enables you to write far less code which contains less bloat and is more expressive.
+L'utilisation de types stricts et de fonctions libres vous permet d'écrire beaucoup moins de code qui contient moins de ballonnements et qui est plus expressif.
 
 
 ### Using JUCE ValueTrees and Modern C++ to Build Large Scale Applications
 ###### ADC 2017  - [Content](https://github.com/drowaudio/presentations/tree/master/ADC%202017%20-%20Using%20JUCE%20ValueTrees%20and%20Modern%20C%2B%2B%20to%20Build%20Large%20Scale%20Applications) - [Video](https://youtu.be/3IaMjH5lBEY)
 
-JUCE ValueTrees are a tree based data structure capable of holding free-form data. They have a callback interface for being notified of changes to data members or the tree structure and have undo capability built in. Think XML on steroids!
-These features make them an ideal candidate for the data model of many applications.
-Building on the ideas presented at last year’s ADC “Using Modern C++ with JUCE to Improve Code Clarity” this talk aims to unwrap the complexities involved in dealing with ValueTrees and expose the elegant nature contained within them, utilising them to build large scale graphical and audio applications quickly.
+JUCE ValueTrees est une structure de données arborescente capable de contenir des données de forme libre. Ils disposent d'une interface de rappel pour être avertis des modifications apportées aux éléments de données ou à l'arborescence et sont dotés d'une fonction d'annulation intégrée. Pensez XML sur les stéroïdes !
+Ces caractéristiques en font un candidat idéal pour le modèle de données de nombreuses applications.
+S'appuyant sur les idées présentées l'an dernier à l'ADC "Using Modern C++ with JUCE to Improve Code Clarity", cet exposé a pour but de démystifier les complexités liées à la gestion de ValueTrees et d'exposer la nature élégante qu'ils contiennent, en les utilisant pour construire rapidement des applications graphiques et audio à grande échelle.
 
-The talk aims to give an in-depth explanation of ValueTree best practices and how apply them to many coding situations using clear, concise, modern C++. Throughout the talk there will be special emphasis on the reference counted nature of these objects and the synchronous/asynchronous nature of the callback events generated and how these relate to performance, thread safety and debugging. Common application tasks such as serialisation, copy/paste and undo/redo are also explored and how they are simply implemented with ValueTrees. Additionally the talk will look at ways to build your own utility classes on top of ValueTrees where it is sensible to do so. Custom developed classes such as the ValueTreeObjectList are explored which allow type-safe, concrete object creation managed by ValueTree state.
+L'exposé vise à expliquer en profondeur les meilleures pratiques de ValueTree et comment les appliquer à de nombreuses situations de codage en utilisant un langage C++ clair, concis et moderne. Tout au long de l'exposé, l'accent sera mis sur la nature comptée par référence de ces objets et sur la nature synchrone ou asynchrone des événements de rappel générés, ainsi que sur leur lien avec les performances, la sécurité des threads et le débogage. Les tâches d'application courantes telles que la sérialisation, le copier/coller et l'annulation/rétablissement sont également explorées et comment elles sont simplement implémentées avec ValueTrees. En outre, l'exposé examinera les moyens de créer vos propres classes utilitaires sur ValueTrees lorsque c'est judicieux de le faire. Les classes développées sur mesure telles que la ValueTreeObjectList sont explorées et permettent la création d'objets concrets et sûrs pour le type gérés par l'état ValueTree.
 
-This example-led talk aims to ensure attendees of all experience levels leave with a solid understanding of how to quickly build C++ JUCE applications utilising ValueTrees in a modern, safe and fun way.
+Cet exemple de présentation vise à s'assurer que les participants de tous les niveaux d'expérience repartent avec une solide compréhension de la façon de construire rapidement des applications C++ JUCE en utilisant ValueTrees d'une manière moderne, sûre et amusante.
 
 
 ### Using Modern C++ with JUCE to Improve Code Clarity
 ###### ADC 2016 - [Content](https://github.com/drowaudio/presentations/tree/master/ADC%202016%20-%20Using%20Modern%20C%2B%2B%20to%20Improve%20Code%20Clarity) - (Unfortunately this talk was not recorded)
 
-Building on the ideas behind last year’s "Using C\++11 to Improve Code Clarity: Braced Initialisers" of reducing code bloat to improve clarity, performance and robustness, this talk takes a wider look at modern C++ coding features and how to utilise them.
+En s'appuyant sur les idées de l'année dernière, "Using C\+++11 pour améliorer la clarté du code : Braced Initialisers" de réduire le gonflement du code pour améliorer la clarté, les performances et la robustesse, cet exposé examine plus en détail les fonctionnalités du codage C++ moderne et comment les utiliser.
 
-One major aspect of event based, application programming is the notion of "when something happens, do this". C++ can often get in the way of clearly expressing this intent. This talk aims to use modern coding styles, in combination with JUCE classes to more clearly and concisely express this intent.
+L'un des aspects majeurs de la programmation événementielle et applicative est la notion de "quand quelque chose arrive, faites-le". C+++ peut souvent se mettre en travers de l'expression claire de cette intention. Cet exposé vise à utiliser des styles de codage modernes, en combinaison avec les classes JUCE, pour exprimer plus clairement et de manière plus concise cette intention.
 
-In particular, a number of possible lambda and std::function applications are demonstrated, ranging from timers and asynchronous callbacks, to drawing methods and general delegation used to reduce dependancies on inheritance. A concise, practical look at std::async is also included with an aim to improve app responsiveness by simply and effectively parallelising intensive areas of code.
+En particulier, un certain nombre d'applications lambda et std::function sont démontrées, allant des minuteries et des rappels asynchrones aux méthodes de dessin et à la délégation générale utilisées pour réduire les dépendances à l'héritage. Un regard concis et pratique sur std::async est également inclus dans le but d'améliorer la réactivité des applications en mettant simplement et efficacement en parallèle des zones de code intensives.
 
-However, when transitioning to modern coding styles there can be some pitfalls. This talk also demonstrates some of these pitfalls and explains how to avoid them. It provides good practices for mixing JUCE and C++ code. In particular it looks at the behaviour of auto and type deduction used in conjunction with JUCE smart pointers and when to prefer std alternatives.
+Cependant, lors de la transition vers des styles de codage modernes, il peut y avoir des pièges. Cet exposé montre également certains de ces pièges et explique comment les éviter. Il fournit de bonnes pratiques pour mélanger le code JUCE et le code C+++. En particulier, il examine le comportement de la déduction automatique et de la déduction de type utilisée en conjonction avec les pointeurs intelligents JUCE et quand préférer les alternatives std.
 
-This example-led talk aims to introduce new paradigms and increase the number of tools in your toolbox whilst keeping code clear, robust and maintainable. It is not an explanation of how C++11 features work under the hood, but the possibilities they unlock.
+Cet exemple de présentation vise à introduire de nouveaux paradigmes et à augmenter le nombre d'outils dans votre boîte à outils tout en gardant le code clair, robuste et maintenable. Il ne s'agit pas d'expliquer comment les fonctions C+++11 fonctionnent sous le capot, mais les possibilités qu'elles ouvrent.
 
 
 ### Using C++11 to Improve Code Clarity - Braced Initialisers
 ###### JUCE Summit 2015 - [Content](https://github.com/drowaudio/presentations/tree/master/JUCE%20Summit%202015%20-%20Using%20C%2B%2B11%20to%20Improve%20Code%20Clarity-%20Braced%20Initialisers) - [Video](https://www.youtube.com/watch?v=SmriQ5zXeAk)
 
-There are a lot of things a programmer has to think about whilst writing code. These include but are not limited to: performance, readability, maintainability, robustness, security, portability, compatibility and scaleability. In order to make writing code simpler to reason about, one solution is to write less code.
+Il y a beaucoup de choses auxquelles un programmeur doit penser lorsqu'il écrit du code. Il s'agit notamment de : performances, lisibilité, maintenabilité, robustesse, sécurité, portabilité, compatibilité et évolutivité. Afin de rendre l'écriture de code plus facile à raisonner, une solution est d'écrire moins de code.
 
-C++11/14 provides us with several new tools to reduce boilerplate code so we can more simply and concisely express intent. Some of the major new features are: type deduction, threads and futures, lambdas, function objects, variadic templates, range-­based for loops, object lifetime management and braced initialisers.
+C+++11/14 nous fournit plusieurs nouveaux outils pour réduire le code standard afin que nous puissions exprimer plus simplement et de manière plus concise l'intention. Certaines des principales nouveautés sont les suivantes : déduction de type, filetages et futures, lambdas, objets de fonction, gabarits variadiques, gestion de la durée de vie des objets et initialisateurs entretoisés, etc.
 
-The term "braced initialisers" is used here to describe a number of new applications of braces including: aggregate initialisation, member declaration brace­or­equal initialisers, object constructor deduction.
+Le terme "initialisateurs entretoisés" est utilisé ici pour décrire un certain nombre de nouvelles applications des entretoises, notamment l'initialisation agrégée, la déclaration de membre des initialisateurs entretoisés, la déduction du constructeur d'objet.
 
-This talk goes through several JUCE based, real­world related examples of simplifying and improving code using the brace-related features. The aim is to not only improve intelligibility but also performance and robustness with less time spent typing and reading.
+Cet exposé passe en revue plusieurs exemples de simplification et d'amélioration du code à l'aide des fonctions liées aux accolades, basés sur JUCE et liés au monde réel. L'objectif n'est pas seulement d'améliorer l'intelligibilité, mais aussi les performances et la robustesse avec moins de temps passé à taper et à lire.
